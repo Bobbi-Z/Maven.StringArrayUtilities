@@ -24,7 +24,7 @@ public class StringArrayUtils {
      * @return second element in specified array
      */
     public static String getSecondElement(String[] array) {
-        int secondIndex = 0;
+        int secondIndex = 1;
         String secondCurrentElement = array[secondIndex];
         return secondCurrentElement;
     }
