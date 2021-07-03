@@ -45,7 +45,9 @@ public class StringArrayUtils {
      * @return second to last element in specified array
      */ // TODO
     public static String getSecondToLastElement(String[] array) {
-        return null;
+        int lengthOfArray = array.length;
+        String secondToLast = array[lengthOfArray - 2];
+        return secondToLast;
     }
 
     /**
