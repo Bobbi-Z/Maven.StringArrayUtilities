@@ -1,5 +1,10 @@
 package com.zipcodewilmington;
 
+import com.sun.tools.javac.util.ArrayUtils;
+import com.sun.tools.javac.util.StringUtils;
+
+import java.util.ArrayList;
+
 /**
  * Created by leon on 1/29/18.
  */
@@ -9,7 +14,8 @@ public class StringArrayUtils {
      * @return first element of specified array
      */ // TODO
     public static String getFirstElement(String[] array) {
-        return array[0];
+        ArrayList<String> listOfArray = new ArrayList<String>();
+        return listOfArray.get(0);
     }
 
     /**
