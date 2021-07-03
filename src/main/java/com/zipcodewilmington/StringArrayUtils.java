@@ -14,9 +14,8 @@ public class StringArrayUtils {
      * @return first element of specified array
      */ // TODO
     public static String getFirstElement(String[] array) {
-        ArrayList<String> listOfArray = new ArrayList<String>();
         int index = 0;
-        String currentIndex = listOfArray.get(index);
+        String currentIndex = array[index];
         return currentIndex;
     }
 
