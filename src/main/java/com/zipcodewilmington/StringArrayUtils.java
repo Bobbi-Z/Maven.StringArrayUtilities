@@ -15,7 +15,9 @@ public class StringArrayUtils {
      */ // TODO
     public static String getFirstElement(String[] array) {
         ArrayList<String> listOfArray = new ArrayList<String>();
-        return listOfArray.get(0);
+        int index = 0;
+        String currentIndex = listOfArray.get(index);
+        return currentIndex;
     }
 
     /**
