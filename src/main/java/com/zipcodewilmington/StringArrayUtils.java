@@ -1,8 +1,9 @@
 package com.zipcodewilmington;
 
+import org.apache.commons.lang3.*;
 import com.sun.org.apache.xpath.internal.objects.XString;
 import com.sun.tools.javac.util.ArrayUtils;
-import com.sun.tools.javac.util.StringUtils;
+import sun.security.util.ArrayUtil;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -11,7 +12,7 @@ import java.util.Collections;
 /**
  * Created by leon on 1/29/18.
  */
-public class StringArrayUtils {
+public class StringArrayUtils<coun> {
     /**
      * @param array array of String objects
      * @return first element of specified array
@@ -39,7 +40,7 @@ public class StringArrayUtils {
     public static String getLastElement(String[] array) {
         int index = 0;
         int arrayLength = array.length;
-        String finalElement = array[arrayLength -1];
+        String finalElement = array[arrayLength - 1];
         return finalElement;
     }
 
@@ -72,10 +73,10 @@ public class StringArrayUtils {
      * @return an array with identical contents in reverse order
      */ // TODO
     public static String[] reverse(String[] array) {
-       ArrayList<String> arrayList = new ArrayList<String>();
-       Collections.addAll(arrayList, array);
-       Collections.reverse(arrayList);
-       String [] arrayReversed = arrayList.toArray(new String[0]);
+        ArrayList<String> arrayList = new ArrayList<String>();
+        Collections.addAll(arrayList, array);
+        Collections.reverse(arrayList);
+        String[] arrayReversed = arrayList.toArray(new String[0]);
         return arrayReversed;
     }
 
@@ -94,13 +95,35 @@ public class StringArrayUtils {
             return false;
         }
     }
+
     /**
      * @param array array of String objects
      * @return true if each letter in the alphabet has been used in the array
      */ // TODO
     public static boolean isPangramic(String[] array) {
-        return false;
+        String alpha = "abcdefghijklmnopqrstuvwxyz";
+        int index;
+        int counter = 0;
+        char currentChar = ' ';
+        String arrayIsString = Arrays.toString(array);
+        arrayIsString = arrayIsString.toLowerCase();
+        for (int i = 0; i < arrayIsString.length(); i++) {
+            currentChar = arrayIsString.charAt(i);
+            for (index = 0; index < alpha.length(); index++) ;
+            {
+                char currentAlpha = alpha.charAt(index);
+                if (currentChar == currentAlpha) {
+                    counter += 1;
+                    StringUtils.replaceChars(arrayIsString, currentChar, ' ');
+                }
+            }
+        }
+        if (counter == 26) {
+        return true;
+        }else {
+            return false;
     }
+
 
     /**
      * @param array array of String objects
@@ -134,7 +157,7 @@ public class StringArrayUtils {
      */ // TODO
     public static String[] packConsecutiveDuplicates(String[] array) {
         return null;
-    }
 
+    }
 
 }
