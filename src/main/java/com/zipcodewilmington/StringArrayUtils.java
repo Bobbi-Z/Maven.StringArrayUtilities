@@ -56,14 +56,15 @@ public class StringArrayUtils {
      * @return true if the array contains the specified `value`
      */ // TODO
     public static boolean contains(String[] array, String value) {
+
         int length = array.length;
+        boolean arrayContains;
         for (int index = 0; index < length; index++) {
             String currentElement = array[index];
-            if (currentElement == value) {
-            return true;
-        }else{
-            return false;
-        }
+            while (currentElement == value) {
+                return true;
+            }
+        } return false;
     }
 
     /**
