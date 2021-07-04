@@ -233,8 +233,24 @@ public class StringArrayUtils<coun> {
      * @return array of Strings with each consecutive duplicate occurrence concatenated as a single string in an array of Strings
      */ // TODO
     public static String[] packConsecutiveDuplicates(String[] array) {
-        return null;
-
+        String lastValue = "";
+        String arrayString = "";
+        int counter = 0;
+        for (String currentValue : array) {
+            // currentValue = array[0];
+            if (currentValue == lastValue) {
+                lastValue += currentValue;
+                arrayString += lastValue + " ";
+                counter += 1;
+            } else {
+                arrayString += currentValue + " ";
+                lastValue = currentValue;
+                counter += 1;
+            }
+        }
+        String[] newArray = new String[counter];
+        newArray = arrayString.split(" ");
+        return newArray;
     }
 
 }
