@@ -88,7 +88,7 @@ public class StringArrayUtils {
         Collections.addAll(arrayList, array);
         Collections.reverse(arrayList);
         String[] arrayReversed = arrayList.toArray(new String[0]);
-        if (array == arrayReversed) {
+        if (Arrays.equals(array, arrayReversed)) {
             return true;
         } else {
             return false;
