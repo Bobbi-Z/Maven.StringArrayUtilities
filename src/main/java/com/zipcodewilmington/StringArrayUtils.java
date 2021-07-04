@@ -105,7 +105,7 @@ public class StringArrayUtils<coun> {
         arrayIsString = arrayIsString.toLowerCase();
         int counter = 0;
         for (char letters = 'a'; letters == 'z'; letters++) {
-            if (StringUtils.containsAny(arrayIsString, letters) == true) {
+            if (StringUtils.contains(arrayIsString, letters)) {
                 counter += 1;
             }
         }
