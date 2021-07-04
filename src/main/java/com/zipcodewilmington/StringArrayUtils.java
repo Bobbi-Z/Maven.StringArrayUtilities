@@ -188,7 +188,7 @@ public class StringArrayUtils<coun> {
         do {
             arrayNew[indexNew++] = array[indexOld];
             indexOld++;
-            if (array[indexOld + 1] == array[indexOld]) {
+            if (array[indexOld] == array[indexOld + 1]) {
                 continue;
             }
         } while (indexOld < array.length);
