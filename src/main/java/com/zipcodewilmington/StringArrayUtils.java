@@ -236,7 +236,7 @@ public class StringArrayUtils<coun> {
         String lastValue = "";
         String arrayString = "";
         String lastAndCurrent = "";
-        int counter = 0;
+        int lengthOfNewArray = 0;
         for (String currentValue : array) {
             // currentValue = array[0];
             if (currentValue == lastValue.subSequence(0, 0)) {
@@ -247,9 +247,9 @@ public class StringArrayUtils<coun> {
                 arrayString += currentValue + " ";
                 lastValue = currentValue;
 
-            }counter += 1;
+            }lengthOfNewArray = StringUtils.countMatches(arrayString, " ");
         }
-        String[] newArray = new String[counter];
+        String[] newArray = new String[lengthOfNewArray];
         newArray = arrayString.split(" ");
         return newArray;
     }
