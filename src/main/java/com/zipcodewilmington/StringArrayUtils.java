@@ -2,7 +2,6 @@ package com.zipcodewilmington;
 
 import org.apache.commons.lang3.*;
 import com.sun.org.apache.xpath.internal.objects.XString;
-import com.sun.tools.javac.util.ArrayUtils;
 import sun.security.util.ArrayUtil;
 
 import java.util.ArrayList;
@@ -182,7 +181,25 @@ public class StringArrayUtils<coun> {
      */ // TODO
 
     public static String[] removeConsecutiveDuplicates(String[] array) {
+        String lastValue = "";
+        String arrayString = "";
+        int counter = 0;
+        for (String currentValue : array) {
+            // currentValue = array[0];
+            if (currentValue == lastValue) {
+                lastValue = currentValue;
+            } else {
+                arrayString += currentValue + " ";
+                lastValue = currentValue;
+                counter += 1;
+            }
+        }
+        String[] newArray = new String[counter];
+        newArray = arrayString.split(" ");
+        return newArray;
+    }
 
+    /*
       int newIndex = 0;
        String lastIndex = "";
         String[] newArray = new String[array.length - 1];
@@ -197,6 +214,7 @@ public class StringArrayUtils<coun> {
         }
         return newArray;
     }
+    */
       /*  String[] arrayNew = new String[array.length - 1];
         int indexOld = 0;
         int indexNew = 0;
