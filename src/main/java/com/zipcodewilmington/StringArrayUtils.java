@@ -148,7 +148,9 @@ public class StringArrayUtils<coun> {
      * @return number of occurrences the specified `value` has occurred
      */ // TODO
     public static int getNumberOfOccurrences(String[] array, String value) {
-        return 0;
+        String arrayIsString = Arrays.toString(array);
+        int numOfValues = StringUtils.countMatches(arrayIsString, value);
+        return numOfValues;
     }
 
     /**
