@@ -183,7 +183,7 @@ public class StringArrayUtils<coun> {
 
     public static String[] removeConsecutiveDuplicates(String[] array) {
 
-       int newIndex = 0;
+        int newIndex = array.length - 1;
        String lastIndex = "";
         String[] newArray = new String[newIndex];
         for (int index = 0; index < array.length; index++) {
