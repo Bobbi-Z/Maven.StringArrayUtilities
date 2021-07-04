@@ -101,7 +101,25 @@ public class StringArrayUtils<coun> {
      * @return true if each letter in the alphabet has been used in the array
      */ // TODO
     public static boolean isPangramic(String[] array) {
-        String alpha = "abcdefghijklmnopqrstuvwxyz";
+        String arrayIsString = Arrays.toString(array);
+        arrayIsString = arrayIsString.toLowerCase();
+        int counter = 0;
+
+        for (char letters = 'a'; letters == 'z'; letters++) {
+            if (StringUtils.containsAny(arrayIsString, letters)) {
+                counter += 1;
+            }
+
+        }
+        if (counter == 26){
+            return true;
+        } else {
+            return false;
+        }
+      }
+
+
+        /*       String alpha = "abcdefghijklmnopqrstuvwxyz";
         int index;
         int counter = 0;
         char currentChar = ' ';
@@ -126,7 +144,7 @@ public class StringArrayUtils<coun> {
             return false;
         }
     }
-
+*/
     /**
      * @param array array of String objects
      * @param value value to check array for
