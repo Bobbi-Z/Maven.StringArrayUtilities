@@ -114,16 +114,16 @@ public class StringArrayUtils<coun> {
                 char currentAlpha = alpha.charAt(index);
                 if (currentChar == currentAlpha) {
                     counter += 1;
-                    StringUtils.replaceChars(arrayIsString, currentChar, ' ');
+
                 }
             }
         }
         if (counter == 26) {
-        return true;
-        }else {
+            return true;
+        } else {
             return false;
+        }
     }
-
 
     /**
      * @param array array of String objects
