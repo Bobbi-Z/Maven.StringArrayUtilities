@@ -159,11 +159,22 @@ public class StringArrayUtils<coun> {
      * @return array with identical contents excluding values of `value`
      */ // TODO
     public static String[] removeValue(String[] array, String valueToRemove) {
-        String arrayIsString = Arrays.toString(array);
+        String[] newArray = new String[array.length - 1];
+        for (int i = 0, k = 0; i < array.length; i++) {
+            if (array[i] == valueToRemove) {
+                continue;
+            } else {
+                newArray[k++] = array[i];
+            }
+        }
+        return newArray;
+    }
+
+        /*String arrayIsString = Arrays.toString(array);
         String newArrayString = StringUtils.remove(arrayIsString, valueToRemove);
         String[] newArray = StringUtils.split(newArrayString);
         return newArray;
-    }
+*/    }
 
     /**
      * @param array array of chars
