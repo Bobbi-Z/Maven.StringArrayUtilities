@@ -109,13 +109,12 @@ public class StringArrayUtils<coun> {
             if (StringUtils.containsAny(arrayIsString, letters)) {
                 counter += 1;
             }
-
         }
-        if (counter == 26){
-            return true;
-        } else {
-            return false;
-        }
+            if (counter == 26){
+                return true;
+            }else{
+                return false;
+            }
       }
 
 
