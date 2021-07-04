@@ -104,9 +104,8 @@ public class StringArrayUtils<coun> {
         String arrayIsString = Arrays.toString(array);
         arrayIsString = arrayIsString.toLowerCase();
         int counter = 0;
-
         for (char letters = 'a'; letters == 'z'; letters++) {
-            if (StringUtils.containsAny(arrayIsString, letters)) {
+            if (StringUtils.containsAny(arrayIsString, letters) == true) {
                 counter += 1;
             }
         }
@@ -115,7 +114,7 @@ public class StringArrayUtils<coun> {
             }else{
                 return false;
             }
-      }
+    }
 
 
         /*       String alpha = "abcdefghijklmnopqrstuvwxyz";
