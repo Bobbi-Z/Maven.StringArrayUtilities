@@ -56,17 +56,20 @@ public class StringArrayUtils {
      * @return true if the array contains the specified `value`
      */ // TODO
     public static boolean contains(String[] array, String value) {
-
-        int length = array.length;
-        boolean arrayContains;
-        for (int index = 0; index < length; index++) {
-            String currentElement = array[index];
-            while (currentElement == value) {
+        for (String currentElement : array) {
+            if (currentElement == value) {
                 return true;
             }
-        } return false;
+        }
+        return false;
     }
 
+        /* for (value : array) {
+            boolean containsElement = StringArrayUtils.contains(array, value);
+
+        } return containsElement;
+    }
+*/
     /**
      * @param array of String objects
      * @return an array with identical contents in reverse order
