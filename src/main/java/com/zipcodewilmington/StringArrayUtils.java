@@ -87,12 +87,13 @@ public class StringArrayUtils {
         ArrayList<String> arrayList = new ArrayList<String>();
         Collections.addAll(arrayList, array);
         Collections.reverse(arrayList);
-        String [] arrayReversed = arrayList.toArray(new String[0]);
-        if (array == arrayReversed){
+        String[] arrayReversed = arrayList.toArray(new String[0]);
+        if (array == arrayReversed) {
             return true;
-        } return false;
+        } else {
+            return false;
+        }
     }
-
     /**
      * @param array array of String objects
      * @return true if each letter in the alphabet has been used in the array
