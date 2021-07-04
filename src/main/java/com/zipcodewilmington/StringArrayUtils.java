@@ -1,9 +1,11 @@
 package com.zipcodewilmington;
 
+import com.sun.org.apache.xpath.internal.objects.XString;
 import com.sun.tools.javac.util.ArrayUtils;
 import com.sun.tools.javac.util.StringUtils;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Created by leon on 1/29/18.
@@ -64,18 +66,14 @@ public class StringArrayUtils {
         return false;
     }
 
-        /* for (value : array) {
-            boolean containsElement = StringArrayUtils.contains(array, value);
-
-        } return containsElement;
-    }
-*/
     /**
      * @param array of String objects
      * @return an array with identical contents in reverse order
      */ // TODO
     public static String[] reverse(String[] array) {
-        return null;
+    ArrayList<String> arrayList = new ArrayList<String>();
+   Collections.reverse(arrayList);
+        return arrayList.toArray(new String[0]);
     }
 
     /**
