@@ -109,14 +109,14 @@ public class StringArrayUtils<coun> {
                 counter += 1;
             }
 
-            }
+        }
         if (counter == 26) {
             return true;
         } else {
             return false;
+        }
+
     }
-
-
 
         /*       String alpha = "abcdefghijklmnopqrstuvwxyz";
         int index;
