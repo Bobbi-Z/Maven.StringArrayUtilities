@@ -115,6 +115,8 @@ public class StringArrayUtils<coun> {
                 if (currentChar == currentAlpha) {
                     counter += 1;
 
+                }else {
+                    continue;
                 }
             }
         }
