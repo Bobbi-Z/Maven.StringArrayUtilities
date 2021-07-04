@@ -77,11 +77,6 @@ public class StringArrayUtils {
        Collections.reverse(arrayList);
        String [] arrayReversed = arrayList.toArray(new String[0]);
         return arrayReversed;
-
-
-        // Collections.reverse(Arrays.asList(array));
-
-
     }
 
     /**
@@ -89,7 +84,13 @@ public class StringArrayUtils {
      * @return true if the order of the array is the same backwards and forwards
      */ // TODO
     public static boolean isPalindromic(String[] array) {
-        return false;
+        ArrayList<String> arrayList = new ArrayList<String>();
+        Collections.addAll(arrayList, array);
+        Collections.reverse(arrayList);
+        String [] arrayReversed = arrayList.toArray(new String[0]);
+        if (array == arrayReversed){
+            return true;
+        } return false;
     }
 
     /**
