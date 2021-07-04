@@ -239,11 +239,10 @@ public class StringArrayUtils<coun> {
         int counter = 0;
         for (String currentValue : array) {
             // currentValue = array[0];
-            if (currentValue == lastValue) {
+            if (currentValue == lastValue.subSequence(0, 0)) {
                lastValue = currentValue;
                 lastAndCurrent = lastValue + currentValue;
-                arrayString += lastAndCurrent + " ";
-                counter += 1;
+                StringUtils.replace(arrayString, lastValue, lastAndCurrent);
             } else {
                 arrayString += currentValue + " ";
                 lastValue = currentValue;
