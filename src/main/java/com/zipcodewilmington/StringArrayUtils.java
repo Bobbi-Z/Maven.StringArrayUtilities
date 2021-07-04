@@ -174,7 +174,7 @@ public class StringArrayUtils<coun> {
         String newArrayString = StringUtils.remove(arrayIsString, valueToRemove);
         String[] newArray = StringUtils.split(newArrayString);
         return newArray;
-*/    }
+*/
 
     /**
      * @param array array of chars
