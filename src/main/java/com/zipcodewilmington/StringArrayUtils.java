@@ -103,12 +103,13 @@ public class StringArrayUtils<coun> {
     public static boolean isPangramic(String[] array) {
         String arrayIsString = Arrays.toString(array);
         arrayIsString = arrayIsString.toLowerCase();
-
+        if (arrayIsString.length() < 26){
+            return false;
+        }
         for (char letters = 'a'; letters == 'z'; letters++) {
             if (arrayIsString.indexOf(letters) < 0) {
                 return false;
             }
-
         }
         return true;
         }
