@@ -5,6 +5,7 @@ import com.sun.tools.javac.util.ArrayUtils;
 import com.sun.tools.javac.util.StringUtils;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 
 /**
@@ -71,9 +72,16 @@ public class StringArrayUtils {
      * @return an array with identical contents in reverse order
      */ // TODO
     public static String[] reverse(String[] array) {
-    ArrayList<String> arrayList = new ArrayList<String>();
-   Collections.reverse(arrayList);
-        return arrayList.toArray(new String[0]);
+       ArrayList<String> arrayList = new ArrayList<String>();
+       Collections.addAll(arrayList, array);
+       Collections.reverse(arrayList);
+       String [] arrayReversed = arrayList.toArray(new String[0]);
+        return arrayReversed;
+
+
+        // Collections.reverse(Arrays.asList(array));
+
+
     }
 
     /**
