@@ -103,20 +103,17 @@ public class StringArrayUtils<coun> {
     public static boolean isPangramic(String[] array) {
         String arrayIsString = Arrays.toString(array);
         arrayIsString = arrayIsString.toLowerCase();
-        int counter = 0;
+
         for (char letters = 'a'; letters == 'z'; letters++) {
-            if (StringUtils.contains(arrayIsString, letters)) {
-                counter += 1;
+            if (arrayIsString.indexOf(letters) < 0) {
+                return false;
             }
 
         }
-        if (counter == 26) {
-            return true;
-        } else {
-            return false;
+        return true;
         }
 
-    }
+
 
         /*       String alpha = "abcdefghijklmnopqrstuvwxyz";
         int index;
