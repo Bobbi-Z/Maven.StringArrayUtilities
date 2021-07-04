@@ -235,12 +235,13 @@ public class StringArrayUtils<coun> {
     public static String[] packConsecutiveDuplicates(String[] array) {
         String lastValue = "";
         String arrayString = "";
+        String lastAndCurrent = "";
         int counter = 0;
         for (String currentValue : array) {
             // currentValue = array[0];
             if (currentValue == lastValue) {
-                lastValue += currentValue;
-                arrayString += lastValue + " ";
+                lastAndCurrent = lastValue + currentValue;
+                arrayString += lastAndCurrent + " ";
                 counter += 1;
             } else {
                 arrayString += currentValue + " ";
