@@ -247,8 +247,9 @@ public class StringArrayUtils<coun> {
                 arrayString += currentValue + " ";
                 lastValue = currentValue;
 
-            }lengthOfNewArray = StringUtils.countMatches(arrayString, " ");
+            }
         }
+        lengthOfNewArray = StringUtils.countMatches(arrayString, " ");
         String[] newArray = new String[lengthOfNewArray];
         newArray = arrayString.split(" ");
         return newArray;
