@@ -240,6 +240,7 @@ public class StringArrayUtils<coun> {
         for (String currentValue : array) {
             // currentValue = array[0];
             if (currentValue == lastValue) {
+               lastValue = currentValue;
                 lastAndCurrent = lastValue + currentValue;
                 arrayString += lastAndCurrent + " ";
                 counter += 1;
