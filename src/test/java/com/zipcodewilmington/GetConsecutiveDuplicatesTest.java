@@ -1,10 +1,12 @@
+
+
 package com.zipcodewilmington;
 
+import com.zipcodewilmington.StringArrayUtils;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class GetConsecutiveDuplicatesTest {
-
 
 
     @Test
