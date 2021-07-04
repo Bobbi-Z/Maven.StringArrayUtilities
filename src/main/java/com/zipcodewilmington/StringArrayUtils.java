@@ -242,7 +242,7 @@ public class StringArrayUtils<coun> {
             if (currentValue == lastValue.subSequence(0, 0)) {
                lastValue = currentValue;
                 lastAndCurrent = lastValue + currentValue;
-                StringUtils.replace(arrayString, lastValue, lastAndCurrent);
+                StringUtils.replace(arrayString, lastValue, lastAndCurrent +" ");
             } else {
                 arrayString += currentValue + " ";
                 lastValue = currentValue;
