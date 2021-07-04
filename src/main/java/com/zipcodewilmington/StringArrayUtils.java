@@ -183,14 +183,16 @@ public class StringArrayUtils<coun> {
 
     public static String[] removeConsecutiveDuplicates(String[] array) {
        int index;
-       int newIndex;
+       int newIndex = 0;
+       String lastIndex = "";
         String[] newArray = new String[array.length - 1];
-        for (index = array.length - 1, newIndex = array.length - 1; index < 0; index--) {
-            if (array[index] == array[index - 1]) {
-                continue;
+        for (index = 0; index < array.length; index++) {
+            if (array[index] == lastIndex) {
+                lastIndex = array[index];
             } else {
                 newArray[newIndex] = array[index];
-                newIndex--;
+                lastIndex = array[index];
+                newIndex++;
             }
         }
         return newArray;
