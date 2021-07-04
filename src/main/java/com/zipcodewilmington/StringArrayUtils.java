@@ -160,11 +160,11 @@ public class StringArrayUtils<coun> {
      */ // TODO
     public static String[] removeValue(String[] array, String valueToRemove) {
         String[] newArray = new String[array.length - 1];
-        for (int index = 0, newIndex = 0; index < array.length; index++) {
-            if (array[index] == valueToRemove) {
+        for (int index = array.length - 1, newIndex = newArray.length -1; index < 0; index--) {
+            if (array[index] == array[index - 1]) {
                 continue;
             } else {
-                newArray[newIndex++] = array[index];
+                newArray[newIndex--] = array[index];
             }
         }
         return newArray;
@@ -182,7 +182,9 @@ public class StringArrayUtils<coun> {
      */ // TODO
 
     public static String[] removeConsecutiveDuplicates(String[] array) {
-        String[] arrayNew = new String[array.length - 1];
+
+
+      /*  String[] arrayNew = new String[array.length - 1];
         int indexOld = 0;
         int indexNew = 0;
         do {
@@ -194,7 +196,7 @@ public class StringArrayUtils<coun> {
         } while (indexOld < array.length);
     return arrayNew;
     }
-
+*/
     /**
      * @param array array of chars
      * @return array of Strings with each consecutive duplicate occurrence concatenated as a single string in an array of Strings
