@@ -7,6 +7,7 @@ import sun.security.util.ArrayUtil;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * Created by leon on 1/29/18.
@@ -233,16 +234,16 @@ public class StringArrayUtils<coun> {
      * @return array of Strings with each consecutive duplicate occurrence concatenated as a single string in an array of Strings
      */ // TODO
     public static String[] packConsecutiveDuplicates(String[] array) {
+
         String lastValue = "";
+        String lastValueSub = "";
         String arrayString = "";
         String lastAndCurrent = "";
         int lengthOfNewArray = 0;
         for (String currentValue : array) {
             // currentValue = array[0];
             if (currentValue == (lastValue.substring(0))) {
-                lastValue = currentValue;
-               lastAndCurrent = currentValue + lastValue;
-              arrayString =  StringUtils.replace(arrayString, lastValue, lastAndCurrent);
+              arrayString += currentValue + " ";
             } else {
                 arrayString += currentValue + " ";
                 lastValue = currentValue;
