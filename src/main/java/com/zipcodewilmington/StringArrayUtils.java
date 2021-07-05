@@ -240,8 +240,9 @@ public class StringArrayUtils<coun> {
         for (String currentValue : array) {
             // currentValue = array[0];
             if (currentValue == (lastValue.substring(0))) {
+                lastValue = currentValue;
                lastAndCurrent = currentValue + lastValue;
-              arrayString =  StringUtils.remove(arrayString,lastValue) + lastAndCurrent;
+              arrayString =  StringUtils.replace(arrayString, lastValue, lastAndCurrent);
             } else {
                 arrayString += currentValue + " ";
                 lastValue = currentValue;
