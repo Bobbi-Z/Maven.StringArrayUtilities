@@ -239,9 +239,9 @@ public class StringArrayUtils<coun> {
         int lengthOfNewArray = 0;
         for (String currentValue : array) {
             // currentValue = array[0];
-            if (currentValue == lastValue.substring(0)) {
+            if (currentValue == (lastValue.substring(0))) {
                lastAndCurrent = currentValue + lastValue;
-              arrayString =  StringUtils.replace(arrayString, lastValue, lastAndCurrent, lastValue.length() + 1);
+              arrayString =  StringUtils.replace(lastValue, lastValue, lastAndCurrent);
             } else {
                 arrayString += currentValue + " ";
                 lastValue = currentValue;
