@@ -241,7 +241,7 @@ public class StringArrayUtils<coun> {
             // currentValue = array[0];
             if (currentValue == (lastValue.substring(0))) {
                lastAndCurrent = currentValue + lastValue;
-              arrayString =  StringUtils.replace(arrayString, lastValue, lastAndCurrent, lastValue.length()-1);
+              arrayString =  StringUtils.replace(arrayString, lastValue, lastAndCurrent, lastValue.length());
             } else {
                 arrayString += currentValue + " ";
                 lastValue = currentValue;
