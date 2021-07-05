@@ -1,13 +1,10 @@
 package com.zipcodewilmington;
 
 import org.apache.commons.lang3.*;
-import com.sun.org.apache.xpath.internal.objects.XString;
-import sun.security.util.ArrayUtil;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.List;
 
 /**
  * Created by leon on 1/29/18.
@@ -234,21 +231,49 @@ public class StringArrayUtils<coun> {
      * @return array of Strings with each consecutive duplicate occurrence concatenated as a single string in an array of Strings
      */ // TODO
     public static String[] packConsecutiveDuplicates(String[] array) {
+ArrayList<String> listArray = new ArrayList<String>();
+listArray.add(0, array[0]);
+for (int index = 1, listIndex = 0; index < array.length; index++){
+    if (listArray.contains(array[index])){
+        listArray.add(listIndex,array[index]);
+    }else {
+        listIndex++;
+        listArray.add(listIndex, array[index]);
 
-        String lastValue = "";
-        String lastValueSub = "";
+
+    }
+    }
+String [] newArray = listArray.toArray(new String[0]);
+return newArray;
+}
+
+
+
+
+
+
+
+
+
+
+    /*    String lastValue = "";
         String arrayString = "";
-        String lastAndCurrent = "";
-        String subOfLast = StringUtils.substring(lastValue, 0, 1)
         int lengthOfNewArray = 0;
-        for (String currentValue : array) {
-            // currentValue = array[0];
-            if (currentValue == subOfLast) {
-              currentValue += lastValue;
+        for (int index = 0; ) {
+
+            String firstChar = Character.toString(lastValue.charAt(0));
+            if (currentValue == lastValue) {
+                currentValue += lastValue;
                 arrayString = StringUtils.replace(arrayString, lastValue, currentValue, lastValue.length());
+                lastValue = currentValue;
+            } else if (currentValue == firstChar) {
+                currentValue += lastValue;
+                arrayString = StringUtils.replace(arrayString, lastValue, currentValue, lastValue.length());
+                firstChar = currentValue;
                 lastValue = currentValue;
             } else {
                 arrayString += currentValue + " ";
+                firstChar = currentValue;
                 lastValue = currentValue;
 
             }
@@ -261,3 +286,5 @@ public class StringArrayUtils<coun> {
     }
 
 }
+*/
+    }
