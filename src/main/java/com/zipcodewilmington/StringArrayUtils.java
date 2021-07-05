@@ -239,10 +239,11 @@ public class StringArrayUtils<coun> {
         String lastValueSub = "";
         String arrayString = "";
         String lastAndCurrent = "";
+        String subOfLast = StringUtils.substring(lastValue, 0, 1)
         int lengthOfNewArray = 0;
         for (String currentValue : array) {
             // currentValue = array[0];
-            if (currentValue == (lastValue = StringUtils.substring(lastValue, 0,1))) {
+            if (currentValue == subOfLast) {
               currentValue += lastValue;
                 arrayString = StringUtils.replace(arrayString, lastValue, currentValue, lastValue.length());
                 lastValue = currentValue;
