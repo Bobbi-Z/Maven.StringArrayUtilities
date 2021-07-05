@@ -243,7 +243,8 @@ public class StringArrayUtils<coun> {
         for (String currentValue : array) {
             // currentValue = array[0];
             if (currentValue == (lastValue.substring(0))) {
-              arrayString = StringUtils.replace(arrayString, " ", currentValue + " ", 1);
+              currentValue += lastValue
+                arrayString = StringUtils.replace(arrayString, lastValue, currentValue + " ", 1);
             } else {
                 arrayString += currentValue + " ";
                 lastValue = currentValue;
