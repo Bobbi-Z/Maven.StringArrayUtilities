@@ -231,21 +231,37 @@ public class StringArrayUtils<coun> {
      * @return array of Strings with each consecutive duplicate occurrence concatenated as a single string in an array of Strings
      */ // TODO
     public static String[] packConsecutiveDuplicates(String[] array) {
-ArrayList<String> listArray = new ArrayList<String>();
-listArray.add(0, array[0]);
-for (int index = 1, listIndex = 0; index < array.length; index++){
-    if (listArray.contains(array[index])){
-        listArray.add(listIndex,array[index]);
-    }else {
-        listIndex++;
-        listArray.add(listIndex, array[index]);
+        ArrayList<String> listArray = new ArrayList<String>();
+        // creating an array list to add values from the array - array lists are more malleable.
+        listArray.add(0, array[0]);
+        //adding the first value from the array into the list so the loop doesn't fail.
+        int listIndex = 0;
+        //creating a value for the index of the list, which will change as stuff gets added.
+            for (int index = 1; index < array.length; index++){
+                // starting at index 1 of the array since 0 has already been added.
+                // running the loop while the index of the array is less than the length of the array.
+                // increasing the index of the array each time the loop runs
+                if (listArray.get(listIndex).contains(array[index])){
+                   // .get retrieves the value of the array list at the current index
+                    // and .contains checks if the value matches the value of the array at the array's current index.
+                    listArray.set(listIndex, (listArray.get(listIndex) + array[index]));
+                    //if true .set changes the current list index vale to match the result of .get which is the current
+                    // index value plus the current array value.
+                }   else {
+                    //if not true
+                    listIndex++;
+                    //increase the value of the list index
+                    listArray.add(listIndex, array[index]);
+                    // add the value of the array to the value of the list index
 
 
+                    }
+            }
+        String [] newArray = listArray.toArray(new String[0]);
+        //converts the list back to a String array
+        return newArray;
+        //displays the new array
     }
-    }
-String [] newArray = listArray.toArray(new String[0]);
-return newArray;
-}
 
 
 
