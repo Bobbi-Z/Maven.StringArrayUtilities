@@ -242,7 +242,7 @@ public class StringArrayUtils<coun> {
         int lengthOfNewArray = 0;
         for (String currentValue : array) {
             // currentValue = array[0];
-            if (currentValue == (lastValue.substring(0,0))) {
+            if (currentValue == (lastValue = StringUtils.substring(lastValue, 0,1))) {
               currentValue += lastValue;
                 arrayString = StringUtils.replace(arrayString, lastValue, currentValue, lastValue.length());
                 lastValue = currentValue;
