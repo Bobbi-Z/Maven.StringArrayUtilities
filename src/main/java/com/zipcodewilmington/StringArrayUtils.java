@@ -243,14 +243,16 @@ public class StringArrayUtils<coun> {
         for (String currentValue : array) {
             // currentValue = array[0];
             if (currentValue == (lastValue.substring(0))) {
-              currentValue += lastValue
-                arrayString = StringUtils.replace(arrayString, lastValue, currentValue + " ", 1);
+              currentValue += lastValue;
+                arrayString = StringUtils.replace(arrayString, lastValue, currentValue, lastValue.length());
+                lastValue = currentValue;
             } else {
                 arrayString += currentValue + " ";
                 lastValue = currentValue;
 
             }
         }
+        arrayString = StringUtils.strip(arrayString);
         lengthOfNewArray = StringUtils.countMatches(arrayString, " ");
         String[] newArray = new String[lengthOfNewArray];
         newArray = arrayString.split(" ");
